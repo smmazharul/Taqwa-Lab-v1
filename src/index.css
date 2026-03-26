@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Amiri", serif;
+}
+
+@layer base {
+  :root {
+    --background: #f5f1e8;
+    --foreground: #1a1a1a;
+    --primary: #2c5f4f;
+    --primary-light: #86a587;
+    --gold: #d4af37;
+    --surface: #ffffff;
+    --surface-hover: #f8f9fa;
+    --border: rgba(44, 95, 79, 0.1);
+    --text-muted: #5a7f6f;
+  }
+
+  .dark {
+    --background: #0f172a;
+    --foreground: #f8fafc;
+    --primary: #86a587;
+    --primary-light: #2c5f4f;
+    --gold: #d4af37;
+    --surface: #1e293b;
+    --surface-hover: #334155;
+    --border: rgba(255, 255, 255, 0.1);
+    --text-muted: #94a3b8;
+  }
+}
+
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  .dark .glass {
+    background: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}
